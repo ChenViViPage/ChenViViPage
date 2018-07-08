@@ -27,11 +27,12 @@
           var article_content = $('#article-content');
           for (var i = 0; i < response.length; i++) {
             var article = response[i];
+            var updated_date = article.updated_at.split("T");
             article_content.append(
               '<div class="card hoverable z-depth-2 col s12">' +
               '<div class="card-content white-text">' +
               '<a href="#" class="card-title pink-text accent-1">' + article.title + '</a>' +
-              '<p class="grey-text text-darken-2">' + article.updated_at + '</p>' +
+              '<p class="grey-text text-darken-2">' + updated_date[0] + " " + updated_date[1].substring(0,updated_date[1].length-1) + '</p>' +
               '</div>' +
               '<div class="card-action" data-id="' + article.id + '">' +
               '</div>' +
