@@ -22,7 +22,7 @@
         url: "https://api.github.com/repos/ChenViVi/me/issues",
         type: "get",
         dataType: 'json',
-        data: ("milestone=1"),
+        data: ("milestone=1" + "&per_page=10"),
         async: false,
         success: function (response) {
           var article_content = $('#article-content');
@@ -42,7 +42,7 @@
             var labels = article.labels;
             var labels_content = $('.card-action[data-id=' + article.id + ']');
             for (var j = 0; j < labels.length; j++)
-              labels_content.append('<div class="chip">' + labels[j].name + '</div>');
+              labels_content.append('<div class="chip" style="background-color:#' + labels[j].color + ';color:#ffffff">' + labels[j].name + '</div>');
           }
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -123,6 +123,15 @@
         </div>
       </nav>
   <div id="article-content" class="row" style="margin-top:20px;margin-left: 20%;margin-right: 20%;"></div>
+  <ul class="pagination center">
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    <li class="active pink accent-1"><a href="#!">1</a></li>
+    <li class="waves-effect"><a href="#!">2</a></li>
+    <li class="waves-effect"><a href="#!">3</a></li>
+    <li class="waves-effect"><a href="#!">4</a></li>
+    <li class="waves-effect"><a href="#!">5</a></li>
+    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+  </ul>
 </body>
 
 </html>
