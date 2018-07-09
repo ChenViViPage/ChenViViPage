@@ -17,8 +17,9 @@
   </style>
   <script type="text/javascript">
     $(document).ready(function () {
+      $(".button-collapse").sideNav();
       $.ajax({
-        url: "https://api.github.com/repos/ChenViViPage/test/issues",
+        url: "https://api.github.com/repos/ChenViVi/me/issues",
         type: "get",
         dataType: 'json',
         data: ("milestone=1"),
@@ -31,7 +32,7 @@
             article_content.append(
               '<div class="card hoverable z-depth-2 col s12">' +
               '<div class="card-content white-text">' +
-              '<a href="#" class="card-title pink-text accent-1">' + article.title + '</a>' +
+              '<a href="article.html" class="card-title pink-text accent-1">' + article.title + '</a>' +
               '<p class="grey-text text-darken-2">' + updated_date[0] + " " + updated_date[1].substring(0,updated_date[1].length-1) + '</p>' +
               '</div>' +
               '<div class="card-action" data-id="' + article.id + '">' +
@@ -53,34 +54,74 @@
 </head>
 
 <body>
-  <nav class="nav-wrapper pink accent-1">
-    <a href="#" class="brand-logo center">This is me</a>
-    <a href="#" data-activates="mobile-demo" class="button-collapse">
-      <i class="fas fa-bars"></i>
-    </a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li class="active">
-        <a href="#">
-          <i class="material-icons left">home</i>主页</a>
-      </li>
-      <li>
-        <a href="bibi.html">
-          <i class="material-icons left">send</i>说说</a>
-      </li>
-      <li>
-        <a href="music.html">
-          <i class="material-icons left">library_music</i>音乐</a>
-      </li>
-      <li>
-        <a href="code.html">
-          <i class="material-icons left">code</i>项目</a>
-      </li>
-      <li>
-        <a href="about.html">
-          <i class="material-icons left">info</i>了解我</a>
-      </li>
-    </ul>
-  </nav>
+    <nav>
+        <div class="nav-wrapper pink accent-1">
+          <a href="#!" class="brand-logo">&nbsp;&nbsp;This is me</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li class="active">
+              <a href="index.html">
+                <i class="material-icons left">home</i>主页</a>
+            </li>
+            <li>
+              <a href="bibi.html">
+                <i class="material-icons left">send</i>说说</a>
+            </li>
+            <li>
+              <a href="code.html">
+                <i class="material-icons left">code</i>项目</a>
+            </li>
+            <li>
+              <a href="music.html">
+                <i class="material-icons left">library_music</i>音乐</a>
+            </li>
+            <li>
+              <a href="game.html">
+                <i class="material-icons left">games</i>游戏</a>
+            </li>
+            <li>
+              <a href="about.html">
+                <i class="material-icons left">info</i>了解我</a>
+            </li>
+            <li>
+              <a href="friends.html">
+                <i class="material-icons left">mood</i>友链</a>
+            </li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li class="active">
+              <a href="index.html">
+                <i class="material-icons left">home</i>主页</a>
+            </li>
+            <li>
+              <a href="bibi.html">
+                <i class="material-icons left">send</i>说说</a>
+            </li>
+            <li>
+              <a href="code.html">
+                <i class="material-icons left">code</i>项目</a>
+            </li>
+            <li>
+              <a href="music.html">
+                <i class="material-icons left">library_music</i>音乐</a>
+            </li>
+            <li>
+              <a href="game.html">
+                <i class="material-icons left">games</i>游戏</a>
+            </li>
+            <li>
+              <a href="about.html">
+                <i class="material-icons left">info</i>了解我</a>
+            </li>
+            <li>
+              <a href="friends.html">
+                <i class="material-icons left">mood</i>友链</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
   <div id="article-content" class="row" style="margin-top:20px;margin-left: 20%;margin-right: 20%;"></div>
 </body>
 
