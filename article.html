@@ -11,6 +11,7 @@
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://cdn.bootcss.com/showdown/1.5.0/showdown.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   <style>
     .tabs .indicator {
       background-color: #ffffff;
@@ -33,7 +34,7 @@
   <script type="text/javascript">
     $(document).ready(function () {
       $.ajax({
-        url: "https://api.github.com/repos/ChenViVi/me/issues/14",
+        url: "https://api.github.com/repos/ChenViVi/me/issues/15",
         type: "get",
         dataType: 'json',
         success: function (response) {
@@ -41,6 +42,7 @@
           var html = converter.makeHtml(response.body);
           $('#article-content').html(converter.makeHtml(response.body));
           $('img').addClass('col s12');
+          $('img').attr('data-action','zoom');
           $('h1').addClass('col s12');
           $('h2').addClass('col s12');
           $('h3').addClass('col s12');
@@ -127,12 +129,8 @@
       </ul>
     </div>
   </nav>
-  <div id="tab1" class="active " style="margin-top: 20px;">
-    <div style="margin-left: 20%;margin-right: 20%;">
-      <div class="card-panel row" id="article-content">
+      <div class="card-panel row" id="article-content" style="margin-left: 20%;margin-right: 20%;margin-top: 20px;">
       </div>
-    </div>
-  </div>
 </body>
 
 </html>

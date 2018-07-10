@@ -11,6 +11,8 @@
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="https://cdn.bootcss.com/showdown/1.5.0/showdown.min.js"></script>
+  <link rel="stylesheet" href="default.css">
+  <script src="highlight.pack.js"></script>
   <style>
     .tabs .indicator {
       background-color: #ffffff;
@@ -77,6 +79,9 @@
                 $('pre').addClass('col s12');
                 $('code').addClass('col s12');
                 $('blockquote').addClass('col s12');
+                $('pre code').each(function (i, block) {
+                  hljs.highlightBlock(block);
+                });
               },
               error: function (jqXHR, textStatus, errorThrown) {
                 Materialize.toast("未知错误", 3000);
