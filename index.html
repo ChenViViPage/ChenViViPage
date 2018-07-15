@@ -55,6 +55,7 @@
   <script type="text/javascript">
     var user_name = 'ChenViVi';
     var repos_name = 'eden';
+    var access_token = 'ec2a936bb52af1e7510ad241874207a23f4dd1d7'
     var page = 1;
     var page_size = 10;
     var articles = new Map();
@@ -72,6 +73,9 @@
         url: "https://api.github.com/repos/" + user_name + "/" + repos_name + "/issues",
         type: "get",
         dataType: 'json',
+        headers: {
+          Authorization: "token " + access_token
+        },
         data: ("milestone=1" + "&creator=" + user_name + "&state=open" + "&page=" + page + "&per_page=" + page_size),
         async: false,
         success: function (response) {
