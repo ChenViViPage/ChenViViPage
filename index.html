@@ -108,7 +108,8 @@
       $('.container').html(
         '<div class="card-panel row" id="article-content">' +
         converter.makeHtml(articles.get(number).body) +
-        '</div>'
+        '</div>' +
+        '<div id="comments"></div>'
       );
       var gitment = new Gitment({
         id: number,
@@ -211,7 +212,6 @@
     <div class="row center" style="margin-bottom: 20px;">
       <a id="btn-load-more" class="waves-effect waves-light btn  pink accent-1" onclick="load_more()">加载更多</a>
     </div>
-    <div id="comments"></div>
   </div>
 </body>
 
