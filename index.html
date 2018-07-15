@@ -105,14 +105,15 @@
     }
 
     function load_content(number) {
+      var article = articles.get(number);
       $('.container').html(
         '<div class="card-panel row" id="article-content">' +
-        converter.makeHtml(articles.get(number).body) +
+        converter.makeHtml(article.body) +
         '</div>' +
         '<div id="comments"></div>'
       );
       var gitment = new Gitment({
-        id: number,
+        id: article.node_id,
         owner: 'ChenViVi',
         repo: 'eden',
         oauth: {
