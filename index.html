@@ -110,6 +110,16 @@
         converter.makeHtml(articles.get(number).body) +
         '</div>'
       );
+      var gitment = new Gitment({
+        id: number,
+        owner: 'ChenViVi',
+        repo: 'eden',
+        oauth: {
+          client_id: '7806cf101f835fa53876',
+          client_secret: 'e934a83086472a5beff2546430260fe2281bde3d',
+        },
+      })
+      gitment.render('comments');
       $('img').addClass('col s12');
       $('h1').addClass('col s12');
       $('h2').addClass('col s12');
@@ -201,18 +211,7 @@
     <div class="row center" style="margin-bottom: 20px;">
       <a id="btn-load-more" class="waves-effect waves-light btn  pink accent-1" onclick="load_more()">加载更多</a>
     </div>
-    <div id="fuck"></div>
-    <script>
-      var gitment = new Gitment({
-        owner: 'ChenViVi',
-        repo: 'eden',
-        oauth: {
-          client_id: 'Iv1.faba09a79bd45d55',
-          client_secret: 'a55d16b02b8211cddcde6c2aa2ccbf14149e03b7',
-        },
-      })
-      gitment.render('fuck')
-    </script>
+    <div id="comments"></div>
   </div>
 </body>
 
