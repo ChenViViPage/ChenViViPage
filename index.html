@@ -58,6 +58,8 @@
     var access_token = 'ec2a936bb52af1e7510ad241874207a23f4dd1d7'
     var page = 1;
     var page_size = 10;
+    var client_id = '7806cf101f835fa53876',
+    var client_secret = 'e934a83086472a5beff2546430260fe2281bde3d',
     var articles = new Map();
     var converter = new showdown.Converter();
     var article_list;
@@ -118,13 +120,14 @@
       );
       var gitment = new Gitment({
         id: article.node_id,
-        owner: 'ChenViVi',
-        repo: 'eden',
+        owner: user_name,
+        repo: repos_name,
         oauth: {
-          client_id: '7806cf101f835fa53876',
-          client_secret: 'e934a83086472a5beff2546430260fe2281bde3d',
+          client_id: client_id,
+          client_secret: client_secret,
         },
-      })
+      });
+      gitment.init();
       gitment.render('comments');
       $('img').addClass('col s12');
       $('h1').addClass('col s12');
