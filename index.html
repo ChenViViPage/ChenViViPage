@@ -13,7 +13,7 @@
   <script src="https://cdn.bootcss.com/showdown/1.5.0/showdown.min.js"></script>
   <link rel="stylesheet" href="css/default.css">
   <script src="js/highlight.pack.js"></script>
-  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <link rel="stylesheet" href="css/gitment.css">
   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
   <style>
     .tabs .indicator {
@@ -25,7 +25,7 @@
     h3,
     h4,
     h5 {
-      color: rgb(255, 128, 171)
+      color: rgb(255, 128, 171);
     }
 
     h1 {
@@ -129,6 +129,9 @@
       });
       gitment.init();
       gitment.render('comments');
+      $('pre code').each(function (i, block) {
+        hljs.highlightBlock(block);
+      });
       $('img').addClass('col s12');
       $('h1').addClass('col s12');
       $('h2').addClass('col s12');
