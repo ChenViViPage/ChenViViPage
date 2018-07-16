@@ -82,7 +82,6 @@
         async: false,
         success: function (response) {
           var article = response[0];
-          alert(article.title);
           $('.container').html(
             '<div class="card-panel row" id="article-content">' +
             converter.makeHtml(article.body) +
@@ -132,7 +131,7 @@
         <i class="material-icons">menu</i>
       </a>
       <ul class="right hide-on-med-and-down">
-        <li class="active">
+        <li>
           <a href="index.html">
             <i class="material-icons left">home</i>主页</a>
         </li>
@@ -153,7 +152,7 @@
             <i class="material-icons left">games</i>游戏</a>
         </li>
         <li>
-          <a href="about.html">
+          <a class="active" href="about.html">
             <i class="material-icons left">info</i>了解我</a>
         </li>
         <li>
